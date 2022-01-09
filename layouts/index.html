@@ -1,7 +1,42 @@
 {{ define "main" }}
 
+{{ $начало := .Site.GetPage "/начало"}}
 <div class="container">
-<h2 class="display-4 text-center">Main body goes here</h2>
+    <h2 class="display-4 text-center">Водата</h2>
+    {{ $предговор := $начало.Resources.Match "предговор*" }}
+    {{ range $предговор }}
+    <div class="lead">
+        {{ .Content }}
+    </div>
+    {{ end}}
+    
+    <div class="row">
+        {{ $описание := $начало.Resources.Match "описание/*" }}
+        <div class="col-3">
+            <nav id="scrollspy" class="sticky-top navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                <a class="navbar-brand" href="#">Съдържание</a>
+                <nav class="nav nav-pills flex-column">
+                    {{ range $описание }}
+                    {{ $име := index (split (index (split .Name "/") 1) ".") 0 }}
+                    {{ $номер := index (split $име "-") 0}}
+                    {{ $заглавие := index (split $име $номер) 1}}
+                    <a class="nav-link ms-3 my-1" href="#part-{{$номер}}">{{$номер}}. {{$заглавие | humanize}}</a>
+                    {{ end }}
+                </nav>
+            </div>
+            <div class="col-9">
+                <div data-bs-offset="0" tabindex="0">
+                    {{ range $описание }}
+                    {{ $име := index (split (index (split .Name "/") 1) ".") 0 }}
+                    {{ $номер := index (split $име "-") 0}}
+                    <h4 id="part-{{$номер}}">
+                    {{ .Content }}
+                    </h4>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {{ end }}
