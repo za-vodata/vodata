@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Водата'
 theme = 'mytheme'
 relativeURLS = true
+disqusShortname = 'vodata'
 
 [module]
     [[module.mounts]]
