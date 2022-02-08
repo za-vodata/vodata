@@ -11,26 +11,25 @@
     {{ end}}
     
     <div class="row">
-        {{ $описание := $начало.Resources.Match "описание/*" }}
+        {{ $описания := $начало.Resources.Match "описание/*" }}
+
         <div class="col-3">
             <nav id="scrollspy" class="sticky-top navbar navbar-light bg-light flex-column align-items-stretch p-3">
                 <a class="navbar-brand" href="#">Съдържание</a>
                 <nav class="nav nav-pills flex-column">
-                    {{ range $описание }}
-                    {{ $име := index (split (index (split .Name "/") 1) ".") 0 }}
-                    {{ $номер := index (split $име "-") 0}}
-                    {{ $заглавие := index (split $име $номер) 1}}
-                    <a class="nav-link ms-3 my-1" href="#part-{{$номер}}">{{$номер}}. {{$заглавие | humanize}}</a>
+                    {{ range $номер, $описание := $описания }}
+                    {{ $име := index (split (index (split $описание.Name "/") 1) ".") 0 }}
+                    {{ $буква := index (split $име "-") 0}}
+                    {{ $заглавие := after 2 $име }}
+                    <a class="nav-link ms-3 my-1" href="#part-{{$номер}}">{{add $номер 1}}. {{$заглавие | humanize}}</a>
                     {{ end }}
                 </nav>
             </div>
             <div class="col-9">
                 <div data-bs-offset="0" tabindex="0">
-                    {{ range $описание }}
-                    {{ $име := index (split (index (split .Name "/") 1) ".") 0 }}
-                    {{ $номер := index (split $име "-") 0}}
+                    {{ range $номер, $описание := $описания }}
                     <h4 id="part-{{$номер}}">
-                    {{ .Content }}
+                    {{ $описание.Content }}
                     </h4>
                     {{ end }}
                 </div>
