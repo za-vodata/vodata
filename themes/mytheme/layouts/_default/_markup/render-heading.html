@@ -1,0 +1,9 @@
+{{ if eq .Level 1 }}
+<figure id="{{ .Anchor | safeURL }}" >
+    <blockquote class="blockquote">
+        <p>{{ .Text | safeHTML }}</p>
+    </blockquote>
+</figure>
+{{ else }}
+<h1 class="display-{{ .Level }}" id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}<span class="anchor"><a href="#{{ .Anchor | safeURL }}">¶</a></span></h1>
+{{ end }}
