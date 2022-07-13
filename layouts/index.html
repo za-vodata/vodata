@@ -1,52 +1,10 @@
 {{ define "main" }}
-
-{{ $начало := .Site.GetPage "/начало"}}
-<div class="container">
-    <h2 class="display-4 text-center">Възстановяване, обновяване, съхранение на водоизточници и извори</h2>
-    {{ $предговор := $начало.Resources.Match "предговор*" }}
-    {{ range $предговор }}
-    <div id="предговор" class="lead">
-        {{ .Content }}
+<div class="row row-cols-1 row-cols-md-1 g-4 mb-4">
+{{ range .Sections.ByWeight }}
+    <div class="col">
+    {{ .Render "list"}}
     </div>
-    {{ end}}
-    
-    <div class="row">
-        {{ $описания := $начало.Resources.Match "описание/*" }}
-
-        <div class="col-3">
-            <nav id="scrollspy" class="sticky-top navbar navbar-light bg-light flex-column align-items-stretch p-3">
-                <a class="navbar-brand" href="#">Съдържание</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link my-1" href="#предговор">Предговор</a>
-                    {{ range $номер, $описание := $описания }}
-                    {{ $номер := add $номер 1}}
-                    {{ $име := index (split (index (split $описание.Name "/") 1) ".") 0 }}
-                    {{ $буква := index (split $име "-") 0}}
-                    {{ $заглавие := after 2 $име }}
-                    <a class="nav-link my-1" href="#part-{{$номер}}">{{$заглавие | humanize}}</a>
-                    {{ end }}
-                </nav>
-            </div>
-            <div class="col-9">
-                <div data-bs-offset="0" tabindex="0">
-                    {{ range $номер, $описание := $описания }}
-                    {{ $номер := add $номер 1}}
-                    <div id="part-{{$номер}}">
-                    {{ $описание.Content }}
-                    </div>
-                    <hr>
-                    {{ end }}
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                {{ template "_internal/disqus.html" . }}
-            </div>
-        </div>
-    </div>
-    
-    
+{{ end }}
 </div>
 
 {{ end }}

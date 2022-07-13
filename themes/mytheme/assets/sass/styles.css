@@ -2,9 +2,10 @@ body {
     position: relative;
 }
 
-p {
+p, .sized {
     font-size: 1.5rem;
 }
+
 
 .anchor {
     font-size: 1.5rem;
@@ -20,9 +21,28 @@ blockquote {
     margin: 10px;
     padding: 10px 20px;
 }
-    
+
 blockquote p {
     margin: 0;
     line-height: 30px;
     padding-bottom: 20px;
+}
+
+.card-img-overlay {
+    background: #00000060;
+}
+
+.card-text .text-muted {
+    color: white !important;
+}
+
+.card {
+}
+
+.card-img {
+    height: 370px;
+    object-fit: cover;
+}
+
+.footer {
 }

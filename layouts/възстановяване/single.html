@@ -1,0 +1,52 @@
+{{ define "main" }}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Начало</a></li>
+      <li class="breadcrumb-item"><a href="/възстановяване">Възстановяване</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{.Title}}</li>
+    </ol>
+  </nav>
+<div class="pb-5">
+  {{ with .Parent.Pages.ByWeight.Next . }}
+  <a class="float-start sized" href="{{ .RelPermalink }}">
+    <i class="bi bi-arrow-left"></i>
+    {{.Title}}
+  </a>
+  {{ else }}
+  {{ with .Parent }}
+  <a class="float-start sized" href="{{ .RelPermalink }}">
+    <i class="bi bi-arrow-left"></i>
+    {{.Title}}
+  </a>
+  {{ end }}
+  {{ end }}
+  {{ with .Parent.Pages.ByWeight.Prev . }}
+  <a class="float-end sized" href="{{ .RelPermalink }}">
+    {{.Title}}
+    <i class="bi bi-arrow-right"></i>
+  </a>
+  {{ end }}
+</div>
+{{ .Content }}
+<div class="pb-5">
+  {{ with .Parent.Pages.ByWeight.Next . }}
+  <a class="float-start sized" href="{{ .RelPermalink }}">
+    <i class="bi bi-arrow-left"></i>
+    {{.Title}}
+  </a>
+  {{ else }}
+  {{ with .Parent }}
+  <a class="float-start sized" href="{{ .RelPermalink }}">
+    <i class="bi bi-arrow-left"></i>
+    {{.Title}}
+  </a>
+  {{ end }}
+  {{ end }}
+  {{ with .Parent.Pages.ByWeight.Prev . }}
+  <a class="float-end sized" href="{{ .RelPermalink }}">
+    {{.Title}}
+    <i class="bi bi-arrow-right"></i>
+  </a>
+  {{ end }}
+</div>
+{{ end }}

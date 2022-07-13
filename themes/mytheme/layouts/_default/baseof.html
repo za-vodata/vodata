@@ -4,7 +4,10 @@
     <body  data-bs-spy="scroll" data-bs-target="#scrollspy">
         {{- partial "header.html" . -}}
         <div id="content">
-        {{- block "main" . }}{{- end }}
+            <div class="container">
+                {{- partial "nav.html" . -}}
+                {{- block "main" . }}{{- end }}
+            </div>
         </div>
         {{- partial "footer.html" . -}}
     </body>
