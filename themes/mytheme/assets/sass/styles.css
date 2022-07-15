@@ -28,21 +28,27 @@ blockquote p {
     padding-bottom: 20px;
 }
 
-.card-img-overlay {
+.carousel-img-overlay {
     background: #00000060;
-}
-
-.card-text .text-muted {
-    color: white !important;
 }
 
 .card {
 }
 
-.card-img {
-    height: 370px;
+.img-fluid {
+    height: 100%;
     object-fit: cover;
 }
 
 .footer {
+}
+
+.carousel-item img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.section-image {
+    height: 500px;
+    object-fit: cover;
 }

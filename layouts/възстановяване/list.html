@@ -1,10 +1,14 @@
-<div class="card bg-dark text-white">
+<div class="card" style="width: 24rem;">
   <img src="{{.RelPermalink}}/{{.Params.image}}" class="card-img" alt="{{.Title}}">
-  <div class="card-img-overlay">
+  <div class="card-body">
     <h3 class="card-title">{{.Title}}</h3>
 
     <p class="card-text summary"> {{ .Summary }}</p>
-    <p class="card-text"><small class="text-muted">Обновено: {{.Lastmod}}</small></p>
     <a href="{{.RelPermalink}}" class="btn btn-lg btn-primary">Виж</a>
   </div>
+  <div class="card-footer bg-transparent border-success">
+    <small class="text-muted">
+      Обновено {{ .Lastmod | time.Format ":date_medium" }}
+    </small>
+</div>
 </div>

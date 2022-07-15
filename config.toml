@@ -1,10 +1,11 @@
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+languageCode = 'bg-bg'
 title = 'За Водата'
 theme = 'mytheme'
 relativeURLS = true
 disqusShortname = 'vodata'
 enableGitInfo = true
+defaultContentLang = 'bg'
 
 [module]
     [[module.mounts]]
