@@ -1,11 +1,4 @@
 {{ define "main" }}
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Начало</a></li>
-      <li class="breadcrumb-item"><a href="/възстановяване">Възстановяване</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{.Title}}</li>
-    </ol>
-  </nav>
 <div class="pb-5">
   {{ with .Parent.Pages.ByWeight.Next . }}
   <a class="float-start sized" href="{{ .RelPermalink }}">

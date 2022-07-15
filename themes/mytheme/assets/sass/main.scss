@@ -2,3 +2,21 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "styles";
 
+.summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2;
+    -webkit-box-orient: vertical;
+ }
+ @include media-breakpoint-up(md) {
+    .summary {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6; /* number of lines to show */
+                line-clamp: 6;
+        -webkit-box-orient: vertical;
+     }
+  }

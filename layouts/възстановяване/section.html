@@ -1,11 +1,5 @@
 {{ define "main" }}
 <div class="row">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Начало</a></li>
-          <li class="breadcrumb-item active">Възстановяване</li>
-        </ol>
-    </nav>
     {{ with index (.Pages.ByWeight) 0}}
     <a class="text-end my-1 sized" href="{{ .Permalink }}">
         {{ .Weight }}. {{.Title }}
@@ -16,6 +10,7 @@
 
     {{ .Content}}
 
+    {{ if .Pages }}
     <h4 class="mt-4">Съдържание</h4>
     <ul class="list-group sized">
         {{ range .Pages.ByWeight }}
@@ -27,6 +22,7 @@
         {{ .Weight }}. {{.Title }}
         <i class="bi bi-arrow-right"></i>
     </a>
+    {{ end }}
     {{ end }}
 </div>
 {{ end }}
