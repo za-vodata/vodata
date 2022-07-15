@@ -4,7 +4,7 @@
     {{ $план := $възстановяване.GetPage "план" }}
     {{ $резултати := $възстановяване.GetPage "резултати" }}
     <div class="col">
-        {{ $план.Render "list-carousel"}}
+        {{ $план.Render "list-details"}}
     </div>
     <h3>Резултати</h3>
     {{ range $резултати.Pages }}

@@ -1,0 +1,41 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-12">
+      <div class="card-body text-center">
+        <h3 class="card-title">{{ .Title }}</h3>
+        <p class="card-text text-start">
+          {{ .Summary }}
+          <a href="{{ .RelPermalink }}" class="card-link">Прочети повече</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row g-0 text-center">
+    <div class="col-md-12">
+      <div class="card-body text-center">
+        <h4 class="card-title">Стъпки за възстановяване:</h4>
+        <div class="col-md-12 my-1">
+        {{ range first 5 .Pages.ByWeight }}
+          <a href="{{ .RelPermalink }}" class="btn btn-outline-success">{{.Title}}</a>
+        {{ end }}
+        </div>
+        <div class="col-md-12 my-1">
+        {{ range first 3 (after 5 .Pages.ByWeight) }}
+          <a href="{{ .RelPermalink }}" class="btn btn-outline-primary">{{.Title}}</a>
+        {{ end }}
+        </div>
+        <div class="col-md-12 my-1">
+          {{ range after 8 .Pages.ByWeight }}
+            <a href="{{ .RelPermalink }}" class="btn btn-outline-info">{{.Title}}</a>
+          {{ end }}
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer bg-transparent border-success">
+      <small class="text-muted">
+        Обновено {{ .Lastmod | time.Format ":date_medium" }}
+      </small>
+  </div>
+</div>
