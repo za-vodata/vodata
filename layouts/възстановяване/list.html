@@ -1,4 +1,4 @@
-<div class="card" style="width: 24rem;">
+<div class="card">
   <img src="{{.RelPermalink}}/{{.Params.image}}" class="card-img" alt="{{.Title}}">
   <div class="card-body">
     <h3 class="card-title">{{.Title}}</h3>
@@ -8,7 +8,8 @@
   </div>
   <div class="card-footer bg-transparent border-success">
     <small class="text-muted">
-      Обновено {{ .Lastmod | time.Format ":date_medium" }}
+      <span class="float-start">Обновено {{ .Lastmod | time.Format ":date_medium" }}</span>
+      <span class="float-end">от {{.Params.Author}}</span>
     </small>
 </div>
 </div>

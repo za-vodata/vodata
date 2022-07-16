@@ -3,13 +3,7 @@ body {
 }
 
 p, .sized {
-    font-size: 1.5rem;
-}
-
-
-.anchor {
-    font-size: 1.5rem;
-    margin-left: 8px;
+    font-size: 1.3rem;
 }
 
 blockquote {

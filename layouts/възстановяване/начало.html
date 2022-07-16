@@ -1,17 +1,14 @@
 {{ define "main" }}
-<div class="row row-cols-1 row-cols-md-1 g-4 mb-4">
+<div class="row g-4 mb-4">
     {{ $възстановяване := .Site.GetPage "section" "възстановяване"}}
     {{ $план := $възстановяване.GetPage "план" }}
-    {{ $резултати := $възстановяване.GetPage "резултати" }}
-    <div class="col">
+    {{ $опитности := $възстановяване.GetPage "опитности" }}
+    <div class="col-md-12">
         {{ $план.Render "list-details"}}
     </div>
-    <h3>Резултати</h3>
-    {{ range $резултати.Pages }}
-    <div class="col">
-        {{ .Render "list"}}
-    </div>
-    {{ end}}
 </div>
+{{ with $опитности }}
+    {{ .Render "опитности"}}
+{{ end }}
 
 {{ end }}
