@@ -2,17 +2,17 @@
 
 <div class="pb-5">
   {{ with .Parent.Pages.ByWeight.Next . }}
-  <a class="float-start sized" href="{{ .RelPermalink }}">
-    <i class="bi bi-arrow-left"></i>
-    {{.Title}}
-  </a>
+    <a class="float-start sized" href="{{ .RelPermalink }}">
+      <i class="bi bi-arrow-left"></i>
+      {{.Title}}
+    </a>
   {{ else }}
-  {{ with .Parent }}
-  <a class="float-start sized" href="{{ .RelPermalink }}">
-    <i class="bi bi-arrow-left"></i>
-    {{.Title}}
-  </a>
-  {{ end }}
+    {{ with .Parent }}
+    <a class="float-start sized" href="{{ .RelPermalink }}">
+      <i class="bi bi-arrow-left"></i>
+      {{.Title}}
+    </a>
+    {{ end }}
   {{ end }}
   {{ with .Parent.Pages.ByWeight.Prev . }}
   <a class="float-end sized" href="{{ .RelPermalink }}">
@@ -22,6 +22,12 @@
   {{ end }}
 </div>
 
+{{ .Scratch.Set "inline8" "false" }}
+<div>
+  {{ .Render "steps"}}
+</div>
+
+<h3 class="pt-2">{{ .Title }}</h3>
 {{ .Content }}
 
 <div class="pb-5">

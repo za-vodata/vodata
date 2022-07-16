@@ -2,14 +2,8 @@
   <img src="{{.RelPermalink}}/{{.Params.image}}" class="card-img" alt="{{.Title}}">
   <div class="card-body">
     <h3 class="card-title">{{.Title}}</h3>
-
+    <span class="text-muted">от {{.Params.Author}}</span>
     <p class="card-text summary"> {{ .Summary }}</p>
     <a href="{{.RelPermalink}}" class="btn btn-lg btn-primary">Виж</a>
   </div>
-  <div class="card-footer bg-transparent border-success">
-    <small class="text-muted">
-      <span class="float-start">Обновено {{ .Lastmod | time.Format ":date_medium" }}</span>
-      <span class="float-end">от {{.Params.Author}}</span>
-    </small>
-</div>
 </div>
