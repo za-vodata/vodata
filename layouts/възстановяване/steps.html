@@ -4,7 +4,7 @@
 {{ $section = .Parent }}
 {{ end }}
 {{ with $section }}
-<h4 class="mb-3">Стъпки за възстановяване на водоизточник:</h4>
+<h4 class="mb-3 mt-4">Стъпки за възстановяване на водоизточник:</h4>
 <div class="row">
     <div class="col-md-3">
     <h5>Забавяне</h5>
@@ -43,7 +43,7 @@
 
 {{ with index .Pages.ByWeight 8 }}
 {{ if eq ($top.Scratch.Get "inline8") "true"}}
-<div class="col-md-12 sized mt-1">
+<div class="col-md-12 sized mt-4">
     <h4>{{ .Title }}</h4>
     {{ .Content }}
 </div>
