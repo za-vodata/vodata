@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <div class="pb-5">
   {{ with .Parent.Pages.ByWeight.Next . }}
     <a class="float-start sized" href="{{ .RelPermalink }}">
@@ -23,20 +22,28 @@
 </div>
 
 {{ .Scratch.Set "inline8" "false" }}
-<div>
-  {{ .Render "steps"}}
+<div class="row">
+  <div class="col-md-3">
+    {{ .Scratch.Set "inline8" "false" }}
+    <div class="sticky-top">
+      {{ .Render "steps"}}
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h3 class="pt-2">{{ .Title }}</h3>
+    {{ range .Params.links }}
+    <div class="card my-3">
+        <div class="card-body">
+            <p class="card-text">{{ .text | markdownify}}</p>
+            <a href='{{ .link | safeURL }}' target="_blank" rel="noopener" class="card-link">{{ .link | safeHTML}}</a>
+        </div>
+    </div>
+    {{ end }}
+    {{ .Content }}
+  </div>
 </div>
 
-<h3 class="pt-2">{{ .Title }}</h3>
-{{ range .Params.links }}
-<div class="card my-3">
-    <div class="card-body">
-        <p class="card-text">{{ .text | markdownify}}</p>
-        <a href='{{ .link | safeURL }}' target="_blank" rel="noopener" class="card-link">{{ .link | safeHTML}}</a>
-    </div>
-</div>
-{{ end }}
-{{ .Content }}
+
 
 <div class="pb-5">
   {{ with .Parent.Pages.ByWeight.Next . }}

@@ -22,13 +22,18 @@
   {{ end }}
 </div>
 
-{{ .Scratch.Set "inline8" "false" }}
-<div>
-  {{ .Render "steps"}}
+<div class="row">
+  <div class="col-md-3">
+    {{ .Scratch.Set "inline8" "false" }}
+    <div class="sticky-top">
+      {{ .Render "steps"}}
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h3 class="pt-2">{{ .Title }}</h3>
+    {{ .Content }}
+  </div>
 </div>
-
-<h3 class="pt-2">{{ .Title }}</h3>
-{{ .Content }}
 
 <div class="pb-5">
   {{ with .Parent.Pages.ByWeight.Next . }}
