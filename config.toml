@@ -5,6 +5,7 @@ theme = 'mytheme'
 relativeURLS = true
 disqusShortname = 'vodata'
 defaultContentLang = 'bg'
+googleAnalytics = 'G-DZPZGEKENY'
 
 [module]
     [[module.mounts]]
