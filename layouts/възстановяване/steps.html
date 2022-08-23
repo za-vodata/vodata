@@ -6,19 +6,15 @@
 {{ with $section }}
 <h4 class="mb-3 mt-4">Стъпки за възстановяване на водоизточник:</h4>
 <ul class="list-group list-group-flush sized">
-    <h5 class="pt-1">Забавяне</h5>
     {{ range first 3 .Pages.ByWeight }}
     <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
     {{ end }}
-    <h5 class="pt-3">Оживление</h5>
     {{ range first 2 (after 3 .Pages.ByWeight) }}
     <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
     {{ end }}
-    <h5 class="pt-3">Осъзнатост</h5>
     {{ range first 3 (after 5 .Pages.ByWeight) }}
     <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
     {{ end }}
-    <h5 class="pt-3">Последствие</h5>
     {{ range first 2 (after 8 .Pages.ByWeight) }}
     <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
     {{ end }}

@@ -8,7 +8,6 @@
     <h4 class="mb-3 mt-4">Стъпки за възстановяване на водоизточник:</h4>
     <div class="row">
         <div class="col-md-3">
-            <h5>Забавяне</h5>
             <ul class="list-group sized">
                 {{ range first 3 .Pages.ByWeight }}
                 <a class="my-1 {{if eq .Title $top.Title}}link-dark{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
@@ -16,7 +15,6 @@
             </ul>
         </div>
         <div class="col-md-3">
-            <h5>Оживление</h5>
             <ul class="list-group sized">
                 {{ range first 2 (after 3 .Pages.ByWeight) }}
                 <a class="my-1 {{if eq .Title $top.Title}}link-dark{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
@@ -24,7 +22,6 @@
             </ul>
         </div>
         <div class="col-md-3">
-            <h5>Осъзнатост</h5>
             <ul class="list-group sized">
                 {{ range first 3 (after 5 .Pages.ByWeight) }}
                 <a class="my-1 {{if eq .Title $top.Title}}link-dark{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
@@ -33,7 +30,6 @@
         </div>
 
         <div class="col-md-3 sized mt-1">
-            <h5>Последствие</h5>
             <ul class="list-group sized">
                 {{ range first 2 (after 8 .Pages.ByWeight) }}
                 <a class="my-1 {{if eq .Title $top.Title}}link-dark{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
