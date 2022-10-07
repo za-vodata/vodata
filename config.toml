@@ -1,4 +1,4 @@
-baseURL = 'http://za-vodata.github.io/vodata/'
+baseURL = 'http://example.org'
 languageCode = 'bg-bg'
 title = 'Възстановяване на водоизточници'
 theme = 'mytheme'
