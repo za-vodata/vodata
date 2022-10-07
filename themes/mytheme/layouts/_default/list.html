@@ -1,7 +1,10 @@
-{{ define "main" }}
+<div class="card bg-dark text-white">
+  <img src="{{.Params.image}}" class="card-img" alt="{{.Title}}">
+  <div class="card-img-overlay">
+    <h3 class="card-title">{{.Title}}</h3>
 
-<div class="container pb-5">
-  {{ .Content }}
+    <p class="card-text"> {{ .Summary }}</p>
+    <p class="card-text"><small class="text-muted">Обновено: {{.Lastmod}}</small></p>
+    <a href="{{path.Dir .Path}}" class="btn btn-lg btn-primary">Виж</a>
+  </div>
 </div>
-
-{{ end }}

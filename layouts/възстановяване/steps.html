@@ -1,0 +1,22 @@
+{{ $top := .}}
+{{ $section := . }}
+{{ if eq .Kind "page"}}
+{{ $section = .Parent }}
+{{ end }}
+{{ with $section }}
+<h4 class="mb-3 mt-4">Стъпки за възстановяване на водоизточник:</h4>
+<ul class="list-group list-group-flush sized">
+    {{ range first 3 .Pages.ByWeight }}
+    <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
+    {{ end }}
+    {{ range first 2 (after 3 .Pages.ByWeight) }}
+    <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
+    {{ end }}
+    {{ range first 3 (after 5 .Pages.ByWeight) }}
+    <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
+    {{ end }}
+    {{ range first 2 (after 8 .Pages.ByWeight) }}
+    <a class="list-group-item list-group-item-action {{if eq .Title $top.Title}}active{{end}}" href="{{.RelPermalink}}">{{.Title}}</a>
+    {{ end }}
+</ul>
+{{ end }}

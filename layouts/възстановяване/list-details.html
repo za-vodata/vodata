@@ -1,0 +1,15 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <img class="img-responsive section-image mb-2" src="{{.RelPermalink}}/{{.Params.image}}">
+    <div class="col-md-12">
+      <div class="card-body text-start">
+        <h3 class="card-title">{{ .Title }}</h3>
+        <p class="card-text text-start">
+          {{ .Content }}
+        </p>
+        {{ .Scratch.Set "inline8" "true" }}
+        {{ .Render "steps_homepage"}}
+      </div>
+    </div>
+  </div>
+</div>

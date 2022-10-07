@@ -2,13 +2,8 @@ body {
     position: relative;
 }
 
-p {
-    font-size: 1.5rem;
-}
-
-.anchor {
-    font-size: 1.5rem;
-    margin-left: 8px;
+p, .sized {
+    font-size: 1.3rem;
 }
 
 blockquote {
@@ -20,9 +15,33 @@ blockquote {
     margin: 10px;
     padding: 10px 20px;
 }
-    
+
 blockquote p {
     margin: 0;
     line-height: 30px;
     padding-bottom: 20px;
+}
+
+.carousel-img-overlay {
+    background: #00000060;
+}
+
+.card {
+}
+
+.img-fluid {
+    object-fit: cover;
+}
+
+.footer {
+}
+
+.carousel-item img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.section-image {
+    height: 500px;
+    object-fit: cover;
 }

@@ -1,0 +1,19 @@
+<div class="row">
+    <h3>{{ .Title }}</h3>
+    {{ range .Pages }}
+        <div class="col-md-4 py-2">
+            {{ .Render "list"}}
+        </div>
+    {{ end}}
+    <div class="col-md-4 py-2">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Сподели опитност</h3>
+
+                <p class="card-text"> Разкажи за своите преживявания с Водата</p>
+                <a href="https://www.facebook.com/groups/zavodata/" target="_blank" class="btn btn-lg btn-primary">Пиши в групата</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

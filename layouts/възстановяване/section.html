@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="row">
+    {{ with index (.Pages.ByWeight) 0}}
+    <a class="text-end my-1 sized" href="{{ .RelPermalink }}">
+        {{.Title }}
+        <i class="bi bi-arrow-right"></i>
+    </a>
+    {{ end }}
+    <h2 class="text-center">{{ .Title }} {{ if .Params.Author }}<small class="text-muted">от {{.Params.Author}}</small> {{ end }}</h2>
+
+    <img class="img-responsive section-image mb-2" src="{{.Params.image}}">
+    {{ .Content}}
+
+    {{ if .Pages }}
+    <h4 class="mt-4">Съдържание</h4>
+    <ul class="list-group sized">
+        {{ range .Pages.ByWeight }}
+            <a class="my-1" href="{{.RelPermalink}}">{{.Title}}</a>
+        {{ end }}
+    </ul>
+    {{ with index .Pages.ByWeight 0}}
+    <a class="text-end my-1 sized" href="{{ .RelPermalink }}">
+        {{.Title }}
+        <i class="bi bi-arrow-right"></i>
+    </a>
+    {{ end }}
+    {{ end }}
+</div>
+<div class="row">
+    <div class="col-12">
+        {{ template "_internal/disqus.html" . }}
+    </div>
+</div>
+{{ end }}

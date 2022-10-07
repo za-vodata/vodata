@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+<div class="pb-5">
+  {{ with .Parent.Pages.ByWeight.Next . }}
+    <a class="float-start sized" href="{{ .RelPermalink }}">
+      <i class="bi bi-arrow-left"></i>
+      {{.Title}}
+    </a>
+  {{ else }}
+    {{ with .Parent }}
+    <a class="float-start sized" href="{{ .RelPermalink }}">
+      <i class="bi bi-arrow-left"></i>
+      {{.Title}}
+    </a>
+    {{ end }}
+  {{ end }}
+  {{ with .Parent.Pages.ByWeight.Prev . }}
+  <a class="float-end sized" href="{{ .RelPermalink }}">
+    {{.Title}}
+    <i class="bi bi-arrow-right"></i>
+  </a>
+  {{ end }}
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    {{ .Scratch.Set "inline8" "false" }}
+    <div class="sticky-top">
+      {{ .Render "steps"}}
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h3 class="pt-2">{{ .Title }}</h3>
+    {{ .Content }}
+  </div>
+</div>
+
+<div class="pb-5">
+  {{ with .Parent.Pages.ByWeight.Next . }}
+  <a class="float-start sized" href="{{ .RelPermalink }}">
+    <i class="bi bi-arrow-left"></i>
+    {{.Title}}
+  </a>
+  {{ else }}
+  {{ with .Parent }}
+  <a class="float-start sized" href="{{ .RelPermalink }}">
+    <i class="bi bi-arrow-left"></i>
+    {{.Title}}
+  </a>
+  {{ end }}
+  {{ end }}
+  {{ with .Parent.Pages.ByWeight.Prev . }}
+  <a class="float-end sized" href="{{ .RelPermalink }}">
+    {{.Title}}
+    <i class="bi bi-arrow-right"></i>
+  </a>
+  {{ end }}
+</div>
+
+<div class="row">
+  <div class="col-12">
+      {{ template "_internal/disqus.html" . }}
+  </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,9 @@
+<div class="card">
+  <img src="{{.RelPermalink}}/{{.Params.image}}" class="card-img" alt="{{.Title}}">
+  <div class="card-body">
+    <h3 class="card-title">{{.Title}}</h3>
+    <span class="text-muted">от {{.Params.Author}}</span>
+    <p class="card-text summary"> {{ .Summary }}</p>
+    <a href="{{.RelPermalink}}" class="btn btn-lg btn-primary">Виж</a>
+  </div>
+</div>

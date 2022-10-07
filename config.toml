@@ -1,11 +1,17 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'Водата'
+baseURL = 'http://example.org'
+languageCode = 'bg-bg'
+title = 'Възстановяване на водоизточници'
 theme = 'mytheme'
 relativeURLS = true
 disqusShortname = 'vodata'
+defaultContentLang = 'bg'
+googleAnalytics = 'G-DZPZGEKENY'
 
 [module]
     [[module.mounts]]
       source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       target = "assets/js/bootstrap.bundle.min.js"
+
+    [[module.mounts]]
+      source = "node_modules/bootstrap-icons/font/fonts"
+      target = "static/css/fonts"

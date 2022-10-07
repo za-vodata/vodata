@@ -5,5 +5,5 @@
     </blockquote>
 </figure>
 {{ else }}
-<h1 class="display-{{ .Level }}" id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}<span class="anchor"><a href="#{{ .Anchor | safeURL }}">¶</a></span></h1>
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}</h1>
 {{ end }}
